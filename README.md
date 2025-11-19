@@ -126,24 +126,21 @@ Structure attendue :
 ```
 module_ia/
 ├── data/
-│   └── tomato/
-│       ├── Tomato_bacterial_spot/
-│       │   ├── image001.jpg
-│       │   ├── image002.jpg
-│       │   └── ...
-│       ├── Tomato_early_blight/
-│       ├── Tomato_healthy/
-│       ├── Tomato_late_blight/
-│       ├── Tomato_leaf_mold/
-│       ├── Tomato_septoria_leaf_spot/
-│       ├── Tomato_spider_mites_two-spotted_spider_mite/
-│       ├── Tomato_target_spot/
-│       ├── Tomato_mosaic_virus/
-│       └── Tomato_yellow_leaf_curl_virus/
-│
-│────────app.py
-│
-│────────train.py
+   └── tomato/
+       ├── Tomato_bacterial_spot/
+       │   ├── image001.jpg
+       │   ├── image002.jpg
+       │   └── ...
+       ├── Tomato_early_blight/
+       ├── Tomato_healthy/
+       ├── Tomato_late_blight/
+       ├── Tomato_leaf_mold/
+       ├── Tomato_septoria_leaf_spot/
+       ├──Tomato_spider_mites_two-spotted_spider_m/
+       ├── Tomato_target_spot/
+       ├── Tomato_mosaic_virus/
+       └── Tomato_yellow_leaf_curl_virus/
+
 ```
 
 **Sources de dataset** :
@@ -156,12 +153,11 @@ module_ia/
 ```
 module_ia/
 ├── app.py                          # API Flask principale
-├── train_model.py                  # Script d'entraînement
+├── train.py                  # Script d'entraînement
 ├── requirements.txt                # Dépendances Python
 ├── .env                            # Variables d'environnement
 ├── .env.example                    # Template de configuration
-├── README.md                       # Documentation (ce fichier)
-├── .gitignore                      # Fichiers à ignorer
+├── README.md                       #                      
 ├── data/
 │   └── tomato/                     # Dataset (10 classes)
 │       ├── Tomato_bacterial_spot/
