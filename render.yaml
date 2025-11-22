@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: plant-disease-ai
+    env: python
+    region: frankfurt
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: BACKEND_URL
+        value: https://votre-backend.onrender.com
+      - key: BACKEND_API_KEY
+        sync: false
+      - key: SEND_TO_BACKEND
+        value: true
+      - key: MODEL_PATH
+        value: models/plant_disease_model_finetuned.h5
+```
+
+#### **`Procfile`** (alternative à render.yaml)
+```
+web: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+```
+
+#### **`runtime.txt`**
+```
+python-3.11.0
