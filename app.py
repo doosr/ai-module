@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 # ═══════════════════════════════════════════════════════════
 
 # Backend configuration
-BACKEND_URL = os.getenv('BACKEND_URL', 'http://localhost:5000')
+BACKEND_URL = os.getenv('BACKEND_URL', 'https://backendagro.onrender.com')
 BACKEND_API_KEY = os.getenv('BACKEND_API_KEY', 'your-secret-key-changez-moi')
 SEND_TO_BACKEND = os.getenv('SEND_TO_BACKEND', 'true').lower() == 'true'
 
@@ -517,13 +517,15 @@ def test_backend():
 # ═══════════════════════════════════════════════════════════
 # DÉMARRAGE
 # ═══════════════════════════════════════════════════════════
-
 if __name__ == '__main__':
+    # Récupérer le port dynamique de Render
+    port = int(os.getenv('PORT', 5001))
+    
     # Affichage informations démarrage
     print("\n" + "="*60)
     print("🤖 Service IA - Détection Maladies des Tomates")
     print("="*60)
-    print(f"📍 URL: http://0.0.0.0:5001")
+    print(f"📍 Port: {port}")
     print(f"🔗 Backend: {BACKEND_URL}")
     print(f"🔑 API Key: {BACKEND_API_KEY[:10]}..." if len(BACKEND_API_KEY) > 10 else "Non configurée")
     print(f"📦 Modèle: {'✅ Chargé' if MODEL_LOADED else '❌ Non chargé (mode DÉMO)'}")
@@ -545,8 +547,10 @@ if __name__ == '__main__':
     print("="*60 + "\n")
     
     # Démarrer le serveur
+    # IMPORTANT : debug=False en production sur Render
     app.run(
         host='0.0.0.0',
-        port=5001,
-        debug=os.getenv('DEBUG', 'false').lower() == 'true'
+        port=port,  # ← Port dynamique
+        debug=False  # ← Toujours False sur Render
     )
+    
