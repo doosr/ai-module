@@ -943,4 +943,5 @@ Contrôler les aleurodes (mouches blanches)
 Utiliser des filets anti-insectes (maille <0.8mm)
 Détruire les plants trop atteints
 Éliminer les mauvaises herbes hôtes
-Planter des variétés résistantes (gène Ty) 
+Planter des variétés résistantes (gène Ty) #   a i - m o d u l e  
+ 
