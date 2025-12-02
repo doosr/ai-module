@@ -3,27 +3,17 @@ services:
     name: plant-disease-ai
     env: python
     region: frankfurt
-    plan: starter
+    plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+    startCommand: python app.py
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
       - key: BACKEND_URL
-        value: https://votre-backend.onrender.com
+        value: https://backendagro.onrender.com
       - key: BACKEND_API_KEY
-        sync: false
+        value: your-secret-key-changez-moi
       - key: SEND_TO_BACKEND
-        value: true
+        value: "true"
       - key: MODEL_PATH
-        value: models/plant_disease_model_finetuned.h5
-```
-
-#### **`Procfile`** (alternative à render.yaml)
-```
-web: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120
-```
-
-#### **`runtime.txt`**
-```
-python-3.11.0
+        value: models/tomato_disease_model.h5
