@@ -1,15 +1,4 @@
 
-# Logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
-
-# ═══════════════════════════════════════════════════════════
-# CONFIGURATION
-# ═══════════════════════════════════════════════════════════
-
 # Backend configuration
 BACKEND_URL = os.getenv('BACKEND_URL', 'https://backendagro.onrender.com')
 BACKEND_API_KEY = os.getenv('BACKEND_API_KEY', 'your-secret-key-changez-moi')
