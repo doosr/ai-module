@@ -1,18 +1,3 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
-import tensorflow as tf
-import numpy as np
-from PIL import Image
-import io
-import requests
-import os
-import logging
-from datetime import datetime
-import traceback
-
-# Configuration
-app = Flask(__name__)
-CORS(app)
 
 # Logging
 logging.basicConfig(
