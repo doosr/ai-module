@@ -1,5 +1,33 @@
 
-# Backend configuration
+import os
+import logging
+from datetime import datetime
+import traceback
+import io
+import requests
+import numpy as np
+from PIL import Image
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+import tensorflow as tf
+
+# Supprimer les messages verbeux de TensorFlow
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
+# Configuration
+app = Flask(__name__)
+CORS(app)
+
+# Logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+# ═══════════════════════════════════════════════════════════
+# CONFIGURATION
+# ═══════════════════════════════════════════════════════════
 BACKEND_URL = os.getenv('BACKEND_URL', 'https://backendagro.onrender.com')
 BACKEND_API_KEY = os.getenv('BACKEND_API_KEY', 'your-secret-key-changez-moi')
 SEND_TO_BACKEND = os.getenv('SEND_TO_BACKEND', 'true').lower() == 'true'
