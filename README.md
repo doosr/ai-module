@@ -212,7 +212,7 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 Pour toute question ou problème :
 
-- 📧 Email: [votre-email]
+- 📧 Email: [dawserbelgacem122@gmail.com]
 - 🐛 Issues: [GitHub Issues](https://github.com/doosr/ChatBot_AgroIA/issues)
 
 ---
